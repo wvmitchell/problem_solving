@@ -10,4 +10,11 @@ class Unique
     end
   end
 
+  def self.is_uniq(to_check)
+    c = counts(to_check)
+    c.values.all? do |value|
+      value == 1
+    end
+  end
+
 end

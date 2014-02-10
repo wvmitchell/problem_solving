@@ -13,4 +13,12 @@ class ExerciseOneTest < MiniTest::Test
     assert_equal Unique.counts('abc'), {'a' => 1, 'b' => 1, 'c' => 1}
   end
 
+  def test_it_knows_if_all_uniq
+    assert Unique.is_uniq('abcd')
+  end
+
+  def test_it_knows_if_repeats
+    refute Unique.is_uniq('aabcde')
+  end
+
 end
